@@ -1,0 +1,532 @@
+# ==========================================
+# AGENTIC DOCS BUILDER - 31 AGENTS CONFIG
+# Data Mining, Analysis & Document Processing
+# ==========================================
+
+agents:
+  # ============================================
+  # SECTION 1: DATA EXTRACTION & PREPROCESSING
+  # ============================================
+  
+  - name: DataExtractor
+    description: Extract structured data from unstructured text
+    default_model: gemini-2.0-flash-exp
+    temperature: 0.1
+    max_tokens: 2048
+    top_p: 0.9
+    system_prompt: "You are a data extraction specialist. Extract structured information from text and format it clearly."
+    user_prompt: |
+      Extract all structured data from the following text. 
+      Format as: Field Name: Value
+      
+      {{input}}
+
+  - name: EntityRecognizer
+    description: Identify and extract named entities (people, organizations, locations)
+    default_model: gpt-4o-mini
+    temperature: 0.2
+    max_tokens: 1024
+    top_p: 0.95
+    system_prompt: "You are an NER (Named Entity Recognition) expert. Identify entities precisely."
+    user_prompt: |
+      Identify all named entities in this text:
+      - PERSON: people's names
+      - ORG: organizations, companies
+      - LOC: locations, cities, countries
+      - DATE: dates and times
+      - MONEY: monetary values
+      
+      Format: [ENTITY_TYPE] entity_name
+      
+      {{input}}
+
+  - name: DataCleaner
+    description: Clean and normalize messy data
+    default_model: gemini-1.5-flash
+    temperature: 0.1
+    max_tokens: 2048
+    top_p: 0.9
+    system_prompt: "You are a data cleaning expert. Remove duplicates, fix formatting, standardize values."
+    user_prompt: |
+      Clean this data by:
+      1. Removing duplicates
+      2. Fixing spelling/formatting errors
+      3. Standardizing date formats
+      4. Normalizing text case
+      
+      {{input}}
+
+  - name: PatternDetector
+    description: Detect patterns, trends, and anomalies in data
+    default_model: gpt-4o-mini
+    temperature: 0.3
+    max_tokens: 1536
+    top_p: 0.95
+    system_prompt: "You are a pattern recognition specialist. Identify trends, correlations, and anomalies."
+    user_prompt: |
+      Analyze this data and identify:
+      1. Patterns or trends
+      2. Anomalies or outliers
+      3. Correlations between variables
+      4. Key insights
+      
+      {{input}}
+
+  - name: SchemaInferrer
+    description: Infer data schema and structure from examples
+    default_model: gemini-2.0-flash-exp
+    temperature: 0.2
+    max_tokens: 1024
+    top_p: 0.9
+    system_prompt: "You infer data schemas and structures from examples."
+    user_prompt: |
+      Analyze this data sample and infer:
+      1. Field names and data types
+      2. Relationships between fields
+      3. Constraints (required, unique, etc.)
+      4. Suggested schema structure
+      
+      {{input}}
+
+  # ============================================
+  # SECTION 2: TEXT ANALYSIS & NLP
+  # ============================================
+
+  - name: SentimentAnalyzer
+    description: Analyze sentiment and emotional tone
+    default_model: gpt-4o-mini
+    temperature: 0.2
+    max_tokens: 512
+    top_p: 0.9
+    system_prompt: "You are a sentiment analysis expert. Classify text sentiment accurately."
+    user_prompt: |
+      Analyze the sentiment of this text:
+      - Overall sentiment: Positive/Negative/Neutral (with confidence score)
+      - Emotional tone: joy, anger, sadness, fear, surprise, etc.
+      - Key phrases contributing to sentiment
+      
+      {{input}}
+
+  - name: TopicModeler
+    description: Identify main topics and themes
+    default_model: gemini-1.5-flash
+    temperature: 0.3
+    max_tokens: 1024
+    top_p: 0.95
+    system_prompt: "You identify and extract main topics from text."
+    user_prompt: |
+      Identify the main topics/themes in this text:
+      1. Primary topic (most prominent)
+      2. Secondary topics
+      3. Keywords for each topic
+      4. Topic distribution (percentages)
+      
+      {{input}}
+
+  - name: KeywordExtractor
+    description: Extract important keywords and phrases
+    default_model: gemini-2.0-flash-exp
+    temperature: 0.2
+    max_tokens: 512
+    top_p: 0.9
+    system_prompt: "You are an expert at extracting relevant keywords and key phrases."
+    user_prompt: |
+      Extract 10-15 most important keywords/phrases from this text.
+      Format: keyword (relevance score 0-10)
+      
+      {{input}}
+
+  - name: TextSummarizer
+    description: Generate concise summaries
+    default_model: gpt-4o-mini
+    temperature: 0.3
+    max_tokens: 512
+    top_p: 0.95
+    system_prompt: "You create concise, accurate summaries while preserving key information."
+    user_prompt: |
+      Summarize this text in 3-5 sentences, capturing the main points:
+      
+      {{input}}
+
+  - name: TextClassifier
+    description: Classify text into predefined categories
+    default_model: gemini-1.5-flash
+    temperature: 0.2
+    max_tokens: 256
+    top_p: 0.9
+    system_prompt: "You classify text into categories accurately."
+    user_prompt: |
+      Classify this text into the most relevant category:
+      Categories: Technology, Business, Science, Health, Entertainment, Sports, Politics, Education, Finance, Other
+      
+      Respond with: Category (confidence percentage)
+      
+      {{input}}
+
+  # ============================================
+  # SECTION 3: DATA MINING & INSIGHTS
+  # ============================================
+
+  - name: TrendAnalyzer
+    description: Analyze temporal trends and changes
+    default_model: gpt-4o-mini
+    temperature: 0.3
+    max_tokens: 1536
+    top_p: 0.95
+    system_prompt: "You analyze trends over time and predict future patterns."
+    user_prompt: |
+      Analyze trends in this data:
+      1. Upward/downward trends
+      2. Seasonal patterns
+      3. Growth rate
+      4. Future predictions (if applicable)
+      
+      {{input}}
+
+  - name: CorrelationFinder
+    description: Find correlations and relationships between variables
+    default_model: gemini-2.0-flash-exp
+    temperature: 0.2
+    max_tokens: 1024
+    top_p: 0.9
+    system_prompt: "You identify correlations and causal relationships in data."
+    user_prompt: |
+      Find correlations in this data:
+      1. Strong positive correlations
+      2. Strong negative correlations
+      3. Potential causal relationships
+      4. Statistical significance notes
+      
+      {{input}}
+
+  - name: AnomalyDetector
+    description: Detect unusual patterns and outliers
+    default_model: gpt-4o-mini
+    temperature: 0.2
+    max_tokens: 1024
+    top_p: 0.9
+    system_prompt: "You detect anomalies, outliers, and unusual patterns in data."
+    user_prompt: |
+      Identify anomalies in this data:
+      1. Statistical outliers
+      2. Unusual patterns
+      3. Data quality issues
+      4. Severity level (low/medium/high)
+      
+      {{input}}
+
+  - name: ClusterAnalyzer
+    description: Group similar items and find clusters
+    default_model: gemini-1.5-flash
+    temperature: 0.3
+    max_tokens: 1536
+    top_p: 0.95
+    system_prompt: "You group similar items and identify natural clusters in data."
+    user_prompt: |
+      Identify clusters/groups in this data:
+      1. Number of distinct clusters
+      2. Characteristics of each cluster
+      3. Size of each cluster
+      4. Cluster labels/names
+      
+      {{input}}
+
+  - name: FrequencyAnalyzer
+    description: Analyze frequency distributions and counts
+    default_model: gemini-2.0-flash-exp
+    temperature: 0.1
+    max_tokens: 1024
+    top_p: 0.9
+    system_prompt: "You analyze frequency distributions and occurrence patterns."
+    user_prompt: |
+      Analyze frequency in this data:
+      1. Most frequent items (top 10)
+      2. Least frequent items
+      3. Distribution type (normal, skewed, etc.)
+      4. Statistical measures (mean, median, mode)
+      
+      {{input}}
+
+  # ============================================
+  # SECTION 4: QUALITY ASSURANCE & VALIDATION
+  # ============================================
+
+  - name: DataValidator
+    description: Validate data quality and completeness
+    default_model: gpt-4o-mini
+    temperature: 0.1
+    max_tokens: 1024
+    top_p: 0.9
+    system_prompt: "You validate data quality, check for errors, and ensure completeness."
+    user_prompt: |
+      Validate this data:
+      1. Missing values
+      2. Invalid entries
+      3. Inconsistencies
+      4. Data quality score (0-100)
+      5. Recommendations for improvement
+      
+      {{input}}
+
+  - name: ConsistencyChecker
+    description: Check for consistency across data
+    default_model: gemini-1.5-flash
+    temperature: 0.1
+    max_tokens: 1024
+    top_p: 0.9
+    system_prompt: "You check data consistency and identify conflicts."
+    user_prompt: |
+      Check consistency in this data:
+      1. Conflicting information
+      2. Inconsistent formatting
+      3. Logical contradictions
+      4. Consistency score (0-100)
+      
+      {{input}}
+
+  - name: DuplicateDetector
+    description: Find and flag duplicate entries
+    default_model: gemini-2.0-flash-exp
+    temperature: 0.1
+    max_tokens: 1024
+    top_p: 0.9
+    system_prompt: "You identify duplicate and near-duplicate entries."
+    user_prompt: |
+      Find duplicates in this data:
+      1. Exact duplicates
+      2. Near duplicates (similar but not identical)
+      3. Duplicate percentage
+      4. Recommended actions
+      
+      {{input}}
+
+  - name: CompletenessChecker
+    description: Assess data completeness
+    default_model: gpt-4o-mini
+    temperature: 0.1
+    max_tokens: 512
+    top_p: 0.9
+    system_prompt: "You assess data completeness and identify gaps."
+    user_prompt: |
+      Assess completeness of this data:
+      1. Missing fields/values
+      2. Completeness percentage
+      3. Critical gaps
+      4. Impact assessment
+      
+      {{input}}
+
+  - name: AccuracyVerifier
+    description: Verify accuracy of information
+    default_model: gemini-1.5-flash
+    temperature: 0.2
+    max_tokens: 1024
+    top_p: 0.9
+    system_prompt: "You verify factual accuracy and flag questionable information."
+    user_prompt: |
+      Verify accuracy of this information:
+      1. Verifiable facts
+      2. Questionable claims
+      3. Confidence level for each item
+      4. Sources needed for verification
+      
+      {{input}}
+
+  # ============================================
+  # SECTION 5: TRANSFORMATION & FORMATTING
+  # ============================================
+
+  - name: DataTransformer
+    description: Transform data into different formats
+    default_model: gpt-4o-mini
+    temperature: 0.2
+    max_tokens: 2048
+    top_p: 0.9
+    system_prompt: "You transform data between formats (JSON, CSV, XML, etc.) accurately."
+    user_prompt: |
+      Transform this data to the requested format.
+      If no format specified, convert to JSON.
+      Preserve all information during transformation.
+      
+      {{input}}
+
+  - name: TableGenerator
+    description: Convert text to structured tables
+    default_model: gemini-2.0-flash-exp
+    temperature: 0.1
+    max_tokens: 2048
+    top_p: 0.9
+    system_prompt: "You convert unstructured text into well-formatted tables."
+    user_prompt: |
+      Convert this text into a structured table:
+      Format as markdown table with appropriate columns and rows.
+      
+      {{input}}
+
+  - name: ReportGenerator
+    description: Generate comprehensive reports from data
+    default_model: gpt-4o-mini
+    temperature: 0.4
+    max_tokens: 2048
+    top_p: 0.95
+    system_prompt: "You generate professional, comprehensive reports from data."
+    user_prompt: |
+      Generate a professional report from this data including:
+      1. Executive Summary
+      2. Key Findings
+      3. Detailed Analysis
+      4. Recommendations
+      5. Conclusion
+      
+      {{input}}
+
+  - name: VisualizationSuggester
+    description: Suggest best visualization types for data
+    default_model: gemini-1.5-flash
+    temperature: 0.3
+    max_tokens: 1024
+    top_p: 0.95
+    system_prompt: "You suggest the most effective visualizations for data."
+    user_prompt: |
+      Suggest the best visualizations for this data:
+      1. Chart types (bar, line, pie, scatter, etc.)
+      2. Which variables to plot
+      3. Why each visualization is appropriate
+      4. Key insights each visualization would reveal
+      
+      {{input}}
+
+  - name: DataNormalizer
+    description: Normalize and standardize data values
+    default_model: gemini-2.0-flash-exp
+    temperature: 0.1
+    max_tokens: 2048
+    top_p: 0.9
+    system_prompt: "You normalize and standardize data to consistent formats."
+    user_prompt: |
+      Normalize this data:
+      1. Standardize date formats to ISO 8601
+      2. Normalize text case appropriately
+      3. Standardize units and measurements
+      4. Fix encoding issues
+      
+      {{input}}
+
+  # ============================================
+  # SECTION 6: ADVANCED ANALYSIS
+  # ============================================
+
+  - name: PredictiveAnalyzer
+    description: Make predictions based on historical data
+    default_model: gpt-4o-mini
+    temperature: 0.3
+    max_tokens: 1536
+    top_p: 0.95
+    system_prompt: "You analyze patterns and make data-driven predictions."
+    user_prompt: |
+      Based on this data, provide:
+      1. Short-term predictions (next period)
+      2. Long-term trends
+      3. Confidence level for predictions
+      4. Factors influencing predictions
+      5. Potential risks or uncertainties
+      
+      {{input}}
+
+  - name: ComparativeAnalyzer
+    description: Compare multiple datasets or entities
+    default_model: gemini-1.5-flash
+    temperature: 0.2
+    max_tokens: 1536
+    top_p: 0.95
+    system_prompt: "You perform comparative analysis between datasets or entities."
+    user_prompt: |
+      Compare the data and provide:
+      1. Key similarities
+      2. Key differences
+      3. Relative strengths/weaknesses
+      4. Rankings or scoring
+      5. Summary comparison table
+      
+      {{input}}
+
+  - name: RootCauseAnalyzer
+    description: Identify root causes of issues or patterns
+    default_model: gpt-4o-mini
+    temperature: 0.3
+    max_tokens: 1536
+    top_p: 0.95
+    system_prompt: "You perform root cause analysis to identify underlying factors."
+    user_prompt: |
+      Perform root cause analysis:
+      1. Identify the primary issue/pattern
+      2. List potential root causes
+      3. Evaluate likelihood of each cause
+      4. Recommended investigation steps
+      5. Preventive measures
+      
+      {{input}}
+
+  - name: ImpactAssessor
+    description: Assess impact and implications of findings
+    default_model: gemini-2.0-flash-exp
+    temperature: 0.3
+    max_tokens: 1536
+    top_p: 0.95
+    system_prompt: "You assess impact and implications of data findings."
+    user_prompt: |
+      Assess the impact of these findings:
+      1. Short-term impact
+      2. Long-term implications
+      3. Affected stakeholders
+      4. Risk level (low/medium/high)
+      5. Recommended actions
+      
+      {{input}}
+
+  - name: InsightSynthesizer
+    description: Synthesize multiple insights into actionable recommendations
+    default_model: gpt-4o-mini
+    temperature: 0.4
+    max_tokens: 2048
+    top_p: 0.95
+    system_prompt: "You synthesize complex insights into clear, actionable recommendations."
+    user_prompt: |
+      Synthesize these insights into actionable recommendations:
+      1. Key takeaways (top 5)
+      2. Priority actions (ranked)
+      3. Quick wins (immediate actions)
+      4. Long-term strategies
+      5. Success metrics to track
+      
+      {{input}}
+
+  - name: MetaAnalyzer
+    description: Analyze the analysis - meta-level insights about data quality and methodology
+    default_model: gemini-1.5-flash
+    temperature: 0.3
+    max_tokens: 1536
+    top_p: 0.95
+    system_prompt: "You perform meta-analysis on data and analytical methods."
+    user_prompt: |
+      Provide meta-analysis:
+      1. Data quality assessment
+      2. Analysis method evaluation
+      3. Potential biases or limitations
+      4. Confidence in conclusions
+      5. Suggestions for improved analysis
+      
+      {{input}}
+
+# ==========================================
+# USAGE NOTES:
+# ==========================================
+# 1. Chain agents sequentially for comprehensive analysis
+# 2. Typical workflow: Extract → Clean → Analyze → Report
+# 3. Adjust temperature for creativity vs. precision
+# 4. Lower temperature (0.1-0.3) for factual tasks
+# 5. Higher temperature (0.4-0.6) for creative tasks
+# 6. Combine multiple agents for complex pipelines
+# 7. Edit outputs between agents as needed
+# 8. Monitor metrics for performance optimization
+# ==========================================
