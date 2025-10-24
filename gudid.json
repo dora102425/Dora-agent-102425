@@ -1,0 +1,47 @@
+[
+  {
+    "GMDN_PT_Name": "Syringe, disposable",
+    "Device_Identifier": "1234567890",
+    "Primary_UDI_DI": "A12345",
+    "Brand_Name": "MedTech",
+    "Model_Number": "MT-SYR-01",
+    "Catalog_Number": "CAT-1001",
+    "Device_Software_Used": "N",
+    "Version_or_Model": "1.0",
+    "Expiration_Date": "2027-12-31",
+    "Manufacture_Date": "2025-01-01",
+    "Labeler_Name": "MedTech Inc.",
+    "Device_Class": "Class II",
+    "Manufacturing_Location": "USA"
+  },
+  {
+    "GMDN_PT_Name": "Blood glucose meter",
+    "Device_Identifier": "0987654321",
+    "Primary_UDI_DI": "B67890",
+    "Brand_Name": "HealthCheck",
+    "Model_Number": "HC-BGM-202",
+    "Catalog_Number": "CAT-2002",
+    "Device_Software_Used": "Y",
+    "Version_or_Model": "2.3",
+    "Expiration_Date": "2029-05-15",
+    "Manufacture_Date": "2024-11-10",
+    "Labeler_Name": "HealthCheck Corp.",
+    "Device_Class": "Class II",
+    "Manufacturing_Location": "Germany"
+  },
+  {
+    "GMDN_PT_Name": "Orthopedic knee implant",
+    "Device_Identifier": "1122334455",
+    "Primary_UDI_DI": "C11223",
+    "Brand_Name": "OrthoCare",
+    "Model_Number": "OC-KNI-5X",
+    "Catalog_Number": "CAT-3003",
+    "Device_Software_Used": "N",
+    "Version_or_Model": "5X",
+    "Expiration_Date": "2030-07-20",
+    "Manufacture_Date": "2025-06-25",
+    "Labeler_Name": "OrthoCare Ltd.",
+    "Device_Class": "Class III",
+    "Manufacturing_Location": "Japan"
+  }
+]
